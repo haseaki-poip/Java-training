@@ -1,4 +1,4 @@
-public class JSample5_1 {
+class JSample5_1 {
     public static void main(String[] args) {
         int lastNum = 0;
 
