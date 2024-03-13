@@ -1,4 +1,4 @@
-package com.intoroduction.introduction.entity;
+package com.intoroduction.entity;
 
 import java.util.Date;
 import javax.persistence.Column;

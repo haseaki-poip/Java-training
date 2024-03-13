@@ -1,4 +1,4 @@
-package com.intoroduction.introduction.model;
+package com.intoroduction.model;
 
 public class UserData {
     private String id;
