@@ -15,4 +15,14 @@ public class UserService {
         // ユーザーTBLの内容を全検索
         return userRepository.findAll();
     }
+
+    public List<User> searchByName(String name) {
+        return userRepository.findByName(name);
+    }
+
+    public User searchById(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("NOT FOUND USER"));
+        return user;
+    }
 }
