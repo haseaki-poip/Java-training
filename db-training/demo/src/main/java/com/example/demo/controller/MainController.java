@@ -2,10 +2,16 @@ package com.example.demo.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.User;
+import com.example.demo.exception.NotFoundException;
 import com.example.demo.service.UserService;
 
 @RestController
@@ -34,4 +40,11 @@ public class MainController {
         System.out.println(user);
         return "search by id";
     }
+
+    // コントローラごとにエラーハンドリングを設定する時
+    // @ExceptionHandler(NotFoundException.class)
+    // public ResponseEntity<?> handleNotFoundException(NotFoundException ex) {
+    // // エラーメッセージと共に404ステータスを返す
+    // return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    // }
 }
