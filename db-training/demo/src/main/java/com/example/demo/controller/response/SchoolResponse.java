@@ -9,5 +9,12 @@ import lombok.NoArgsConstructor;
 public class SchoolResponse {
     private int id;
     private String name;
-    private Set<StudentResponse> students;
+    private Set<SimpleStudentResponse> students;
+}
+
+
+@Data
+class SimpleStudentResponse {
+    private int id;
+    private String name;
 }
