@@ -32,4 +32,10 @@ public class StudentService {
         return modelMapper.map(studentEntities,
                 new TypeToken<List<StudentResponse>>() {}.getType());
     }
+
+    public List<StudentResponse> findStudentsBySchoolName(String name) {
+        List<StudentEntity> studentEntities = studentRepo.findStudentsBySchoolName(name);
+        return modelMapper.map(studentEntities,
+                new TypeToken<List<StudentResponse>>() {}.getType());
+    }
 }

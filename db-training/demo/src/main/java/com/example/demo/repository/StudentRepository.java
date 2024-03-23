@@ -17,4 +17,8 @@ public interface StudentRepository extends CrudRepository<StudentEntity, Integer
 
     @Query(value = "SELECT student FROM StudentEntity student " + "JOIN FETCH student.school")
     List<StudentEntity> findAllStudents();
+
+    @Query(value = "SELECT student FROM StudentEntity student "
+            + "JOIN FETCH student.school WHERE student.school.name = :name")
+    List<StudentEntity> findStudentsBySchoolName(@Param("name") String name);
 }

@@ -24,4 +24,10 @@ public class StudentController {
     public List<StudentResponse> findAllStudents() {
         return studentService.findAllStudents();
     }
+
+    @GetMapping("/school/{name}")
+    public List<StudentResponse> findStudentsBySchoolName(
+            @PathVariable(name = "name") String name) {
+        return studentService.findStudentsBySchoolName(name);
+    }
 }
